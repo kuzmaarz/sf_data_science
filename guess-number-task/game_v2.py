@@ -5,7 +5,7 @@
 import numpy as np
 
 
-def random_predict(number: int = 1) -> int:
+def random_predict(number: int=1) -> int:
     """Рандомно угадываем число
 
     Args:
@@ -14,17 +14,19 @@ def random_predict(number: int = 1) -> int:
     Returns:
         int: Число попыток
     """
-    count = 0
+    count = 0  # Число попыток
     interval_begin = 1  # Начало интервала
     interval_end = 101  # Конец интервала
 
     while True:
         count += 1
         predict_number = np.random.randint(interval_begin, interval_end)  # предполагаемое число
-        if number == predict_number:
+        if number==predict_number:
             break  # выход из цикла если угадали
-        elif number < predict_number and number >= interval_begin:
+        
+        elif number<predict_number: 
             interval_end = predict_number  # передвигаем конец интервала
+        
         else: 
             interval_begin = predict_number  # передвигаем начало интервала   
     return count
