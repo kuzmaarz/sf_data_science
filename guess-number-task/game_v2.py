@@ -18,7 +18,7 @@ def random_predict(number: int=1) -> int:
     interval_begin = 1  # Начало интервала
     interval_end = 101  # Конец интервала
 
-    while True:
+    while count < 20:
         count += 1
         predict_number = np.random.randint(interval_begin, interval_end)  # предполагаемое число
         if number==predict_number:
